@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devWindows": "set NODE_ENV=development&& nodemon app.js",
-    "start": "node ./app.js"
+    "devWindows": "set NODE_ENV=development&& nodemon ./bin/server.js",
+    "start": "node ./bin/server.js"
   },
   "repository": {
     "type": "git",
