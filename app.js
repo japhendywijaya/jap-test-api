@@ -13,5 +13,6 @@ app.use(require('morgan')('combined'))
 app.use(require('cors')())
 
 app.use(require('./route'))
+app.use(require('./middleware/errorHandler'))
 
 module.exports = app
