@@ -23,7 +23,13 @@ class TestController{
 
 
     static list(req,res,next){
-        postPayloads.findAll({})
+        postPayloads.findAll({
+            where: {},
+            order: [
+                ['createdAt', 'DESC']
+            ],
+            limit: 200
+        })
         .then(result=>{
             res.status(200).json(result)
         })
