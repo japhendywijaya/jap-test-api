@@ -14,7 +14,7 @@ app.use(require('cors')())
 
 app.use(require('./route'))
 
-
+//triggered
 app.listen(port, ()=>{
     console.log('Server listening on port', port)
 })
