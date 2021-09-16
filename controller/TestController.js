@@ -21,10 +21,10 @@ class TestController{
 
     static postRequestStringPayload(req,res,next){
         postPayloads.create({
-            payload: req.body
+            payload: req.body.payload
         })
         .then(result=>{
-            res.status(200).json({ message: 'PostRequest success' })
+            res.status(200).json({ message: 'postRequestStringPayload success' })
         })
         .catch(err=>{
             next(err)
