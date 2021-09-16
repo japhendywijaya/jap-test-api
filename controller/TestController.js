@@ -14,6 +14,12 @@ class TestController{
         ===============================================
         KEY
         ===============================================`, key)
+        try{
+            const parse = JSON.parse(key)
+            console.log('parse \n', parse)
+        }catch(err){
+            console.log('error \n', err)
+        }
         // const parsed = JSON.parse(key[0])
         // console.log(`
         // ===============================================
@@ -54,6 +60,16 @@ class TestController{
     static getPayloadOnly(req,res,next){
         postPayloads.findOne({
             where: {
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
+        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
                 id: req.params.postPayloadId
             }
         })
