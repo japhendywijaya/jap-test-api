@@ -32,6 +32,22 @@ class TestController{
     }
 
 
+    static getPayloadOnly(req,res,next){
+        postPayloads.findOne({
+            where: {
+                id: req.params.postPayloadId
+            }
+        })
+        .then(result=>{
+            res.send(result.payload)
+        })
+        .catch(err=>{
+            next(err)
+        })
+
+    }
+
+
     static list(req,res,next){
         postPayloads.findAll({
             where: {},
