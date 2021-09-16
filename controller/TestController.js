@@ -21,6 +21,11 @@ class TestController{
     }
 
     static postRequestStringPayload(req,res,next){
+        const body = req.body
+        console.log(`
+        ===============================================
+        body
+        ===============================================`, body)
         postPayloads.create({
             payload: req.body.payload
         })
