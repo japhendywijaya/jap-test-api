@@ -5,6 +5,6 @@ Router.get('/test', TestController.test)
 Router.get('/', TestController.list)
 
 Router.post('/postRequest', TestController.postRequest)
-// Router.post('/postRequestStringPayload', TestController.postRequestStringPayload)
+Router.post('/postRequestStringPayload', TestController.postRequestStringPayload)
 
 module.exports = Router
