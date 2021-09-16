@@ -16,7 +16,11 @@ class TestController{
             res.status(200).json({ message: 'PostRequest success' })
         })
         .catch(err=>{
-            next(err)
+            res.status(400).json({
+                err: err,
+                message: err.message
+            })
+            // next(err)
         })
     }
 
