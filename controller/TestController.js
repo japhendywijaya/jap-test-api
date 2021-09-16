@@ -17,8 +17,18 @@ class TestController{
         .catch(err=>{
             next(err)
         })
+    }
 
-        
+    static postRequestStringPayload(req,res,next){
+        postPayloads.create({
+            payload: req.body
+        })
+        .then(result=>{
+            res.status(200).json({ message: 'PostRequest success' })
+        })
+        .catch(err=>{
+            next(err)
+        })
     }
 
 
@@ -37,6 +47,7 @@ class TestController{
             next(err)
         })
     }
+    
 
     static postFormDataRequest(req,res,next){
         res.status(200).json({
