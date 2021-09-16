@@ -18,7 +18,11 @@ class TestController{
             const parse = JSON.parse(key)
             console.log('parse \n', parse)
         }catch(err){
-            console.log('error \n', err)
+            console.log(`
+            ===============================================
+            ERROR PARSING !!!!!
+            ===============================================`)
+            console.log(err)
         }
         // const parsed = JSON.parse(key[0])
         // console.log(`
@@ -29,7 +33,10 @@ class TestController{
             payload: JSON.stringify(key)
         })
         .then(result=>{
-            console.log(`SUCCESS!!!`);
+            console.log(`
+            ===============================================
+            SUCCESS !!!!!!
+            ===============================================`)
             res.status(200).json({ message: 'PostRequest success' })
         })
         .catch(err=>{
