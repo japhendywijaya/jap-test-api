@@ -60,16 +60,6 @@ class TestController{
     static getPayloadOnly(req,res,next){
         postPayloads.findOne({
             where: {
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
-        console.log(`🚀\n ~ file: TestController.js ~ line 62 ~ err`, err)
                 id: req.params.postPayloadId
             }
         })
