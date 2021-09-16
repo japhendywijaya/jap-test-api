@@ -16,11 +16,7 @@ class TestController{
             res.status(200).json({ message: 'PostRequest success' })
         })
         .catch(err=>{
-            res.status(400).json({
-                err: err,
-                message: err.message
-            })
-            // next(err)
+            next(err)
         })
     }
 
@@ -77,7 +73,9 @@ class TestController{
     }
 
     static deleteAll(req,res,next){
-        postPayloads.destroy()
+        postPayloads.destroy({
+            where: {}
+        })
         .then(result=>{
             res.status(200).json(result)
         })
