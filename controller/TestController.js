@@ -10,13 +10,17 @@ class TestController{
 
     static postRequest(req,res,next){
         const key = Object.keys(req.body)
-        const parsed = JSON.parse(key[0])
         console.log(`
         ===============================================
-        parsed
-        ===============================================`, parsed)
+        KEY
+        ===============================================`, key)
+        // const parsed = JSON.parse(key[0])
+        // console.log(`
+        // ===============================================
+        // parsed
+        // ===============================================`, parsed)
         postPayloads.create({
-            payload: JSON.stringify(parsed)
+            payload: JSON.stringify(req.body)
         })
         .then(result=>{
             res.status(200).json({ message: 'PostRequest success' })
