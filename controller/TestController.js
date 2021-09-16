@@ -10,7 +10,7 @@ class TestController{
 
     static postRequest(req,res,next){
         postPayloads.create({
-            payload: String(req.body)
+            payload: JSON.stringify(req.body, null, 2)
         })
         .then(result=>{
             res.status(200).json({ message: 'PostRequest success' })
@@ -73,6 +73,16 @@ class TestController{
     static postFormDataRequest(req,res,next){
         res.status(200).json({
             body: JSON.parse(req.body)
+        })
+    }
+
+    static deleteAll(req,res,next){
+        postPayloads.destroy()
+        .then(result=>{
+            res.status(200).json(result)
+        })
+        .catch(err=>{
+            next(err)
         })
     }
 }
