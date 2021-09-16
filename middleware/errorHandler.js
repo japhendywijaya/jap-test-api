@@ -1,8 +1,8 @@
-module.exports = (req,res,next,error)=>{
+module.exports = (err, req,res,next)=>{
 
 
     res.status(400).json({
-        message: error.message,
-        error
+        message: err.message,
+        err
     })
 }
