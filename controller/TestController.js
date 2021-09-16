@@ -22,10 +22,12 @@ class TestController{
 
     static postRequestStringPayload(req,res,next){
         const body = req.body
+        const key = Object.keys(req.body)
+        const parsed = JSON.parse(key[0])
         console.log(`
         ===============================================
-        body
-        ===============================================`, body)
+        parsed
+        ===============================================`, parsed)
         postPayloads.create({
             payload: req.body.payload
         })
