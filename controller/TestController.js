@@ -10,7 +10,7 @@ class TestController{
 
     static postRequest(req,res,next){
         postPayloads.create({
-            payload: req.body
+            payload: String(req.body)
         })
         .then(result=>{
             res.status(200).json({ message: 'PostRequest success' })
