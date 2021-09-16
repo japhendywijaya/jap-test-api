@@ -39,7 +39,7 @@ class TestController{
             }
         })
         .then(result=>{
-            res.send(result.payload)
+            res.send(String(result.payload))
         })
         .catch(err=>{
             next(err)
