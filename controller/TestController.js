@@ -12,7 +12,8 @@ class TestController{
         console.log('postRequestText req.body \n', req.body);
         
         postPayloads.create({
-            payload: JSON.stringify(JSON.parse(req.body))
+            // payload: JSON.stringify(JSON.parse(req.body))
+            payload: req.body
         })
         .then(result=>{
             res.status(200).json({message: 'PostRequestTest success'})
@@ -26,7 +27,7 @@ class TestController{
 
     static postRequest(req,res,next){
         console.log('postRequest req.body \n', req.body);
-        
+
         postPayloads.create({
             payload: JSON.stringify(req.body)
         })
