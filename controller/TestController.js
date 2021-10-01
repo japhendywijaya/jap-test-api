@@ -11,12 +11,16 @@ class TestController{
     static postRequestText(req,res,next){
         console.log('postRequestText req.body \n', req.body);
         
+        console.log(`
+        ===============================================
+        MAU EXE
+        ===============================================`)
         postPayloads.create({
             payload: JSON.stringify(JSON.parse(req.body))
             // payload: JSON.stringify(req.body)
         })
         .then(result=>{
-        console.log(`🚀\n ~ file: TestController.js ~ line 19 ~ result`, result)
+            console.log(`🚀\n ~ file: TestController.js ~ line 19 ~ result`, result)
             res.status(200).json({message: 'PostRequestTest success'})
         })
         .catch(err=>{
@@ -24,6 +28,10 @@ class TestController{
             
             next(err)
         })
+        console.log(`
+        ===============================================
+        2
+        ===============================================`)
 
 
     }
