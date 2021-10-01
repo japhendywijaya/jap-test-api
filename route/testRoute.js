@@ -6,6 +6,7 @@ Router.get('/getPayloadOnly/:postPayloadId', TestController.getPayloadOnly )
 Router.get('/', TestController.list)
 
 Router.post('/postRequest', TestController.postRequest)
+Router.post('/postRequestText', TestController.postRequestText)
 Router.post('/postRequestStringPayload', TestController.postRequestStringPayload)
 
 

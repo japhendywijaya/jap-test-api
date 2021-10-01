@@ -7,40 +7,30 @@ class TestController{
         })
     }
 
-
-    static postRequest(req,res,next){
-        const key = Object.keys(req.body)
-        console.log(`
-        ===============================================
-        BODY
-        ===============================================`, req.body)
-        console.log(`
-        ===============================================
-        KEY
-        ===============================================`, key)
-        try{
-            const parse = JSON.parse(key)
-            console.log('parse \n', parse)
-        }catch(err){
-            console.log(`
-            ===============================================
-            ERROR PARSING !!!!!
-            ===============================================`)
-            console.log(err)
-        }
-        // const parsed = JSON.parse(key[0])
-        // console.log(`
-        // ===============================================
-        // parsed
-        // ===============================================`, parsed)
+    
+    static postRequestText(req,res,next){
+        console.log('postRequestText req.body \n', req.body);
+        
         postPayloads.create({
-            payload: JSON.stringify(key)
+            payload: JSON.stringify(JSON.parse(req.body))
         })
         .then(result=>{
-            console.log(`
-            ===============================================
-            SUCCESS !!!!!!
-            ===============================================`)
+            res.status(200).json({message: 'PostRequestTest success'})
+        })
+        .catch(err=>{
+            next(err)
+        })
+
+
+    }
+
+    static postRequest(req,res,next){
+        console.log('postRequest req.body \n', req.body);
+        
+        postPayloads.create({
+            payload: JSON.stringify(req.body)
+        })
+        .then(result=>{
             res.status(200).json({ message: 'PostRequest success' })
         })
         .catch(err=>{
