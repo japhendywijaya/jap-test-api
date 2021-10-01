@@ -16,8 +16,8 @@ class TestController{
         MAU EXE
         ===============================================`)
         postPayloads.create({
-            payload: JSON.stringify(JSON.parse(req.body))
-            // payload: JSON.stringify(req.body)
+            // payload: JSON.stringify(JSON.parse(req.body))
+            payload: JSON.stringify(req.body)
         })
         .then(result=>{
             console.log(`🚀\n ~ file: TestController.js ~ line 19 ~ result`, result)
