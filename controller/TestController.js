@@ -16,9 +16,12 @@ class TestController{
             // payload: JSON.stringify(req.body)
         })
         .then(result=>{
+        console.log(`🚀\n ~ file: TestController.js ~ line 19 ~ result`, result)
             res.status(200).json({message: 'PostRequestTest success'})
         })
         .catch(err=>{
+            console.log(`🚀\n ~ file: TestController.js ~ line 22 ~ err`, err)
+            
             next(err)
         })
 
