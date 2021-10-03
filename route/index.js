@@ -3,15 +3,12 @@ const Router = require('express').Router()
 
 Router.use('/tests', require('./testRoute'))
 Router.use('/', (req,res,next)=>{
-    fs.readFile('./misc/info.txt', 'utf8', (err, data)=>{
+    fs.readFile('./misc/info.html', 'utf8', (err, data)=>{
         if(err)
             next(err)
         else{
-            res.format({
-                'text/plain': function () {
-                  res.send(data)
-                }
-            })
+            res.setHeader('Content-type', 'text/html')
+            res.send(data)
         }
     })
 
