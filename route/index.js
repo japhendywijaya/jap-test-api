@@ -1,17 +1,15 @@
+const fs = require('fs')
 const Router = require('express').Router()
 
-
-
 Router.use('/tests', require('./testRoute'))
-Router.use('/', (req,res)=>{
-    res.status(200).json({
-        info: `
-        <POST> {{host}}/tests/postRequest => POST something\n
-        <GET> {{host}}/tests => List everything\n
-        <GET> {{host}}/tests/test => Test Connection\n
-    
-        `
+Router.use('/', (req,res,next)=>{
+    fs.readFile('./misc/info.txt', 'utf8', (err, data)=>{
+        if(err)
+            next(err)
+        else
+            res.send(data)
     })
+
 })
 
 

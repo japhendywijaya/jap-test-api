@@ -9,9 +9,6 @@ class TestController{
 
     
     static postRequestText(req,res,next){
-        console.log('req.headers ', req.headers);
-
-
         postPayloads.create({
             // payload: JSON.stringify(JSON.parse(req.body))
             payload: JSON.stringify(req.body)
@@ -27,10 +24,6 @@ class TestController{
     }
 
     static postRequest(req,res,next){
-        console.log('postRequest');
-        console.log('postRequest req.body \n', req.body);
-        console.log('rqe.headers \n', req.headers);
-
         postPayloads.create({
             payload: JSON.stringify(req.body)
         })
