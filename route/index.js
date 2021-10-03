@@ -6,8 +6,13 @@ Router.use('/', (req,res,next)=>{
     fs.readFile('./misc/info.txt', 'utf8', (err, data)=>{
         if(err)
             next(err)
-        else
-            res.send(data)
+        else{
+            res.format({
+                'text/plain': function () {
+                  res.send(data)
+                }
+            })
+        }
     })
 
 })
