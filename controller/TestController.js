@@ -9,13 +9,6 @@ class TestController{
 
     
     static postRequestText(req,res,next){
-        console.log('postRequestText req.body \n', req.body);
-        
-        console.log(`
-        ===============================================
-        MAU EXE
-        ===============================================`)
-
         console.log('req.headers ', req.headers);
 
 
@@ -24,24 +17,19 @@ class TestController{
             payload: JSON.stringify(req.body)
         })
         .then(result=>{
-            console.log(`🚀\n ~ file: TestController.js ~ line 19 ~ result`, result)
             res.status(200).json({message: 'PostRequestTest success'})
         })
         .catch(err=>{
-            console.log(`🚀\n ~ file: TestController.js ~ line 22 ~ err`, err)
-            
             next(err)
         })
-        console.log(`
-        ===============================================
-        2
-        ===============================================`)
 
 
     }
 
     static postRequest(req,res,next){
+        console.log('postRequest');
         console.log('postRequest req.body \n', req.body);
+        console.log('rqe.headers \n', req.headers);
 
         postPayloads.create({
             payload: JSON.stringify(req.body)
