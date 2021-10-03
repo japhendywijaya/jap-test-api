@@ -15,6 +15,10 @@ class TestController{
         ===============================================
         MAU EXE
         ===============================================`)
+
+        console.log('req.headers ', req.headers);
+
+
         postPayloads.create({
             // payload: JSON.stringify(JSON.parse(req.body))
             payload: JSON.stringify(req.body)
